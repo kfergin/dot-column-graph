@@ -6,8 +6,8 @@ This is just a simple dot-column (name?) graph with optional data transitions. I
 `src/scripts/index.js`: displays a graph with six columns and refreshes the data every 3 seconds.
 
 ### Props
-* `data`: **Array<{name: String, values:Array<Number>}>** Your data should be an array of objects, each representing a column.
-* `colors`: **Array<String>** An array of hex colors. `Default: Array with six colors`
+* `data`: **Array<{name: String, values:Array&lt;Number>}>** Your data should be an array of objects, each representing a column.
+* `colors`: **Array&lt;String>** An array of hex colors. `Default: Array with six colors`
 * `width`: **Number** The ratio of width to height. If you want the graph area to be a square, this should be `1`. `Default: 1.8`
 * `xLabel`: **String** The x-axis label. `Default: ''`
 * `yLabel`: **String** The y-axis label. `Default: ''`
@@ -18,5 +18,5 @@ This is just a simple dot-column (name?) graph with optional data transitions. I
 * `showExtremes`: **Boolean** Show or hide graph lines for min and max. `Default: false`
 * `dataTransitions`: **Boolean** If your data changes and you'd like it to transition between sets. Obviously, not a good idea if you're working with a lot of data. If that's the case, I'd look for something that uses [PixiJS](http://www.pixijs.com/). `Default: false`
 
-TODO:
+#### TODO:
 * Refine "dot-concentration" calculation (maybe). Probably use quartiles...
