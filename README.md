@@ -20,3 +20,6 @@ This is just a simple dot-column (name?) graph with optional data transitions. I
 
 #### TODO:
 * Refine "dot-concentration" calculation (maybe). Probably use quartiles...
+
+#### Fun Stuff:
+* *Playing around with the transition properties.* You could have all the points enter from the bottom, top, or randomize it. This would involve the `cy` property in `TransitionMotion`'s `willEnter`. You could also change the `cx` property for some horizontal movement. If you want each dot to leave/enter instead of transitioning directly to its new position, you'd need each point for each data set to have a unique key.

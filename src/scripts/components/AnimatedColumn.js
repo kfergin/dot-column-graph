@@ -13,8 +13,8 @@ const AnimatedColumn = ({values, shift, color}) => {
 			willEnter={() => ({cy: Math.random()*100, opacity: 0})}
 			willLeave={() => ({cy: spring(Math.random()*100), opacity: spring(0)})}
 			styles={values.map((v, i) => ({
-				// key is the "connection" that transitions each
-				// point to their new values
+				// key: ''+i is the "connection" that transitions each point
+				// to its new value instead of having every point leave/enter
 				key: ''+i,
 				style: {cy: spring(v), opacity: spring(opacity)}
 			}))}
