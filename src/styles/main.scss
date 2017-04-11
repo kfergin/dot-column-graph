@@ -1,0 +1,53 @@
+#graphEl {
+	// for demo
+	width: 900px;
+	margin: 0 auto;
+}
+
+@import 'normalize';
+@import 'elements';
+.dot-column-graph {
+	> div {
+		position: relative;
+	}
+	&.y-label-padding > div {
+		padding-left: 28.8px;
+	}
+	.graph {
+		display: block;
+		padding: 14.4px 0 28.8px;
+		border-width: 1px 0;
+		circle {
+			r: 0.6;
+		}
+		line {
+			stroke: #ccc;
+			stroke-width: 0.3;
+		}
+		text {
+			font-family: 'Helvetica Neue';
+			font-size: 2px;
+			fill: #666;
+			transform: translateY(-0.5px);
+		}
+	}
+	.legend {
+		padding: 0 28.8px;
+		font-size: 14px;
+		text-align: center;
+		li {
+			display: inline-block;
+			padding: 0 7.2px 7.2px;
+		}
+	}
+	.x-label {
+		text-align: center;
+	}
+	.y-label {
+		position: absolute;
+		left: 0;
+		bottom: 50%;
+		transform-origin: 0% 0%;
+		transform: rotateZ(-90deg) translate3d(-50%, 0, 0);
+	}
+}
