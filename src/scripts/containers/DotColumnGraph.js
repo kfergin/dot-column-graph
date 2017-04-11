@@ -7,7 +7,7 @@ class DotColumnGraph extends React.Component {
 		let convertedData = data.map(d => {
 			return {
 				name: d.name,
-				values: d.values.map(val => (val - props.min)/(props.max - props.min))
+				values: d.values.map(val => (val - props.min)/(props.max - props.min) * 100)
 			};
 		});
 		return (
@@ -28,6 +28,7 @@ DotColumnGraph.defaultProps = {
 	dividers: 3,
 	dividerLabels: false,
 	showExtremes: false,
+	dataTransitions: false,
 	colors: ['#3498db','#e74c3c','#1abc9c','#f1c40f','#9b59b6','#2ecc71']
 };
 

@@ -1,7 +1,7 @@
 {
   "name": "dot-column-graph",
   "version": "1.0.0",
-  "description": "A simple dot-column graph.",
+  "description": "A simple dot-column graph with optional transitions.",
   "main": "src/scripts/containers/DotColumnGraph.js",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "react": "^15.5.3",
-    "react-dom": "^15.5.3"
+    "react-dom": "^15.5.3",
+    "react-motion": "^0.4.7"
   }
 }

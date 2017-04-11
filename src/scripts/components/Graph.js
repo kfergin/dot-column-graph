@@ -1,9 +1,11 @@
 import React from 'react';
 
 import Column from './Column';
+import AnimatedColumn from './AnimatedColumn';
 import Extremes from './Extremes';
 
-const Graph = ({data, min, max, colors, width, dividers, dividerLabels, showExtremes, dividerDiff, columnSpacing, groupOffset}) => {
+const Graph = ({data, min, max, colors, width, dividers, dividerLabels, showExtremes, dataTransitions, dividerDiff, columnSpacing, groupOffset, ...props}) => {
+	let ColumnType = dataTransitions ? AnimatedColumn : Column;
 	return (
 		<svg className="graph" viewBox={'0 0 ' + width + ' 100'}>
 			{dividers.map((_,i,arr) => {
@@ -29,7 +31,7 @@ const Graph = ({data, min, max, colors, width, dividers, dividerLabels, showExtr
 			)}
 			<g style={{transform: `translateX(${groupOffset}px)`}}>
 				{data.map((d, i) => (
-					<Column
+					<ColumnType
 						key={i}
 						values={d.values}
 						shift={(i+1) * columnSpacing}
