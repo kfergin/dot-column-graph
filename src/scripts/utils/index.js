@@ -11,7 +11,11 @@ export const getRange = (values) => {
 }
 
 export const hexToRgb = (hex, a) => {
-    let result = /^#([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    let hexString = hex.replace('#', '');
+    if (hexString.length < 6) {
+        hexString = hexString.split('').map(l => l+l).join('');
+    }
+    let result = /^([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexString);
     if (!result) return;
     let rgb = `${parseInt(result[1], 16)},${parseInt(result[2], 16)},${parseInt(result[3], 16)}`;
     if (a) {
